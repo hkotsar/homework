@@ -1,0 +1,203 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: "Lato", sans-serif;
+    box-sizing: border-box;
+    background: #eee;
+}
+
+.container {
+    display: flex;
+    width: 110rem;
+    margin: 5rem auto;
+    padding: 5rem 0rem;
+    
+}
+
+.addword {
+
+    flex: 0 0 30%;
+    background: #fff;
+    margin: 0rem 2rem;
+    padding: 3rem 2rem;
+    border-radius: 10px;
+    height: 27rem;
+    box-shadow: 0 -1px 0 #e5e5e5,0 0 2px rgba(0,0,0,.12),0 2px 4px rgba(0,0,0,.24);
+
+    animation-name: movesRight;
+    animation-duration: 2s;
+}
+
+.addword__title {
+    margin-bottom: 3rem;
+    font-size: 1.8rem;
+}
+
+.addword__input {
+    width: 100%;
+    padding: .8rem;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #0064E5;
+    font-size: 1.6rem;
+}
+
+.buttons {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    margin: .5rem 0rem;
+    padding: 1rem .2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .2s;
+    font-size: 1.6rem;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn__test {
+    background: #0064E5;
+    color: #fff;
+}
+
+.btn__clear {
+    background: #333;
+    color: #fff;
+}
+
+/* TABLE */
+
+.table {
+    flex: 1;
+    margin: 0rem 1rem;
+    height: 70vh;
+}
+
+.table__list {
+    margin: 1rem 0rem;
+    width: 100%;
+}
+
+.table__item {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background: #eee;
+    padding: 2.5rem 2rem;
+    font-size: 1.7rem;
+    border-bottom: 2px solid #ddd;
+    text-align: center;
+   
+}
+
+.table__item--number {
+    flex: 0 0 10%;
+}
+
+.table__item--text {
+    flex: 0 0 60%;
+}
+
+.true {
+    background: #86C232;
+    border-radius: 50%;
+    width: 2.2rem;
+    height: 2.2rem;
+}
+
+.false {
+    background: #FF3131;
+    border-radius: 50%;
+    width: 2.2rem;
+    height: 2.2rem;
+   
+}
+
+.tooltip {
+   
+    position: relative;
+    display: inline-block;
+    box-shadow: 0 -1px 0 #e5e5e5,0 0 2px rgba(0,0,0,.12),0 2px 4px rgba(0,0,0,.24);
+    cursor: pointer;
+}
+
+.tooltiptext {
+    visibility: hidden;
+    width: 22rem;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -11rem;
+}
+
+.tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+/* Animations */
+
+@keyframes movesRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@media (max-width: 37.5em) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        overflow: hidden;
+    }
+
+    .addword {
+        margin-bottom: 3rem;
+    }
+
+    .tooltiptext {
+        font-size: 1.2rem;
+        width: 15rem;
+    }
+
+    .tooltiptext::after {
+        left: 74%;
+    }
+}
+
