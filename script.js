@@ -50,7 +50,8 @@ const updateUI = function (words) {
     displayWords(words)
 }
 
-btnTest.addEventListener('click', function() {
+btnTest.addEventListener('click', function(e) {
+    e.preventDefault();
    
     const inputWord = inputField.value
 
@@ -67,8 +68,8 @@ btnTest.addEventListener('click', function() {
     
 })
 
-btnClear.addEventListener('click', function() {
-
+btnClear.addEventListener('click', function(e) {
+    e.preventDefault();
     words.length = 0;
     updateUI(words)
 })
