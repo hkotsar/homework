@@ -7,23 +7,21 @@ const inputField = document.querySelector('.addword__input')
 const words = []
 
 function isPalindrome(word) {
+    let stack = []
 
-    const keyString = 'anna'
-    const keyValue  = word.toLowerCase().trim()
-
-   
-    if (keyString === keyValue) {
-        return true;
-    } else {
-        return false;
+    for (const c in word) {
+        stack.push(c)
     }
 
+    let s = ""
+    while (stack) {
+        s += stack.pop()
+    }
+
+    return word === s;
 }
 
-console.log (isPalindrome("anna") === true);
-console.log (isPalindrome("Anna") === true);
-console.log (isPalindrome("anna ") === true);
-console.log (isPalindrome("YellowSubmarine") === false);
+console.log("tere" === isPalindrome("eret"))
 
 const displayWords = function (words) {
     tableDisplay.innerHTML = '';
