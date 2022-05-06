@@ -18,6 +18,8 @@ function isPalindrome(word) {
         s += stack.pop()
     }
 
+    console.log(word, s);
+    
     return word === s;
 }
 
